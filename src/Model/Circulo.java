@@ -1,11 +1,13 @@
 package Model;
 
+import java.awt.geom.Point2D;
+
 public class Circulo implements ObjetoGeometrico {
 
     private double raio;
-    Ponto2d centro;
+    Point2D centro;
 
-    public Circulo(double raio, Ponto2d centro) {
+    public Circulo(double raio, Point2D centro) {
         this.raio = raio;
         this.centro = centro;
     }
@@ -14,28 +16,28 @@ public class Circulo implements ObjetoGeometrico {
         return raio;
     }
 
-    public void setCentro(Ponto2d centro) {
+    public void setCentro(Point2D centro) {
         this.centro = centro;
     }
 
     @Override
-    public float getArea() {
+    public double getArea() {
         return (float) (Math.PI * raio * raio);
     }
 
     @Override
-    public float getPerimetro() {
+    public double getPerimetro() {
         return (float) (Math.PI * raio * 2.0);
     }
 
     @Override
-    public Ponto2d getCentro() {
+    public Point2D getCentro() {
         return centro;
     }
     
     @Override
     public String toString() {
-        return "Circulo{" + "raio=" + raio + ", centro=" + centro + '}';
+        return "Circulo {" + "raio=" + raio + ", centro= " + centro.toString() + '}';
     }
 
 

@@ -1,9 +1,11 @@
 
 package Model;
 
+import java.awt.geom.Point2D;
+
 public interface ObjetoGeometrico {
     
-   public float getArea();
-   public float getPerimetro();
-   public Ponto2d getCentro();
+   public double getArea();
+   public double getPerimetro();
+   public Point2D getCentro();
 }
