@@ -67,7 +67,7 @@ public class Triangulo implements ObjetoGeometrico {
     }
 
     public double calculaDistancia(Point2D p1, Point2D p2) {
-        return (double) Math.sqrt(Math.pow((p1.getX() - p2.getX()), 2) + Math.pow((p1.getY() - p2.getY()), 2));
+        return Point2D.distance(p1.getX(), p1.getY(), p2.getX(), p2.getY());
     }
 
     @Override
