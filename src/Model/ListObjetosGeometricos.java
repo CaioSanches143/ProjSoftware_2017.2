@@ -29,7 +29,7 @@ public class ListObjetosGeometricos {
         String resp = "";
 
         for (ObjetoGeometrico obj : listaOG) {
-            resp = resp + obj.toString()+ "   ------> Área: "+obj.getArea()+" ; Perímetro: "+ obj.getPerimetro()+" ; Centro: "+ obj.getCentro().getX()+ "\n";
+            resp = resp + obj.toString()+ "   ------> Área: "+obj.getArea()+" ; Perímetro: "+ obj.getPerimetro()+" ; Centro: "+ obj.getCentro().toString()+ "\n";
         }
         return resp;
 
