@@ -7,10 +7,9 @@ public class Retangulo implements ObjetoGeometrico {
     private Point2D p1;
     private Point2D p2;
 
-    public Retangulo(Point2D p1, Point2D p2) {
-        this.p1 = p1;
-        this.p2 = p2;
-
+    public Retangulo(double x1, double y1, double x2, double y2 ) {
+        p1 = new Point2D.Double(x1, y1);
+        p2 = new Point2D.Double(x2, y2);
     }
 
     public Point2D getP1() {
@@ -54,6 +53,6 @@ public class Retangulo implements ObjetoGeometrico {
 
     @Override
     public String toString() {
-        return "Retangulo {" + "p1= " + p1.toString() + ", p2= " + p2.toString() + '}';
+        return "Retangulo {" + "p1 = " + p1.toString() + ", p2 = " + p2.toString() + '}';
     }
 }

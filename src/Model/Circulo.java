@@ -7,9 +7,9 @@ public class Circulo implements ObjetoGeometrico {
     private double raio;
     Point2D centro;
 
-    public Circulo(double raio, Point2D centro) {
+    public Circulo(double raio,double x1, double y1) {
         this.raio = raio;
-        this.centro = centro;
+        centro = new Point2D.Double(x1, y1);
     }
 
     public double getRaio() {
@@ -37,7 +37,7 @@ public class Circulo implements ObjetoGeometrico {
     
     @Override
     public String toString() {
-        return "Circulo {" + "raio=" + raio + ", centro= " + centro.toString() + '}';
+        return "Circulo {" + "raio =" + raio + ", centro = " + centro.toString() + '}';
     }
 
 

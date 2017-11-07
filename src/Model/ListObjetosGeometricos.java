@@ -10,17 +10,17 @@ public class ListObjetosGeometricos {
         listaOG = new ArrayList<ObjetoGeometrico>();
     }
 
-    public void addLOG(ObjetoGeometrico obj) {
+    public void addEOG(ObjetoGeometrico obj) {
         listaOG.add(obj);
     }
 
-    public void removeLOG(ObjetoGeometrico obj) {
+    public void removeEOG(ObjetoGeometrico obj) {
         if (listaOG.contains(obj)) {
             listaOG.remove(obj);
         }
     }
 
-    public int qtdLOG() {
+    public int qtdEOG() {
         return listaOG.size();
     }
 

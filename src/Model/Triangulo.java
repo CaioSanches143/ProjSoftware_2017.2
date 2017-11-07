@@ -16,10 +16,10 @@ public class Triangulo implements ObjetoGeometrico {
         this.p1 = p1;
     }
 
-    public Triangulo(Point2D p1, Point2D p2, Point2D p3) {
-        this.p1 = p1;
-        this.p2 = p2;
-        this.p3 = p3;
+    public Triangulo(double x1, double y1, double x2, double y2, double x3, double y3) {
+        p1 = new Point2D.Double(x1, y1);
+        p2 = new Point2D.Double(x2, y2);
+        p3 = new Point2D.Double(x3, y3);
     }
 
     public Point2D getP2() {
@@ -59,10 +59,10 @@ public class Triangulo implements ObjetoGeometrico {
 
     @Override
     public Point2D getCentro() {
-        double newX =(double)(( p1.getX() + p2.getX() + p3.getX() )/3.0);
-        double newY = (double)(( p1.getY() + p2.getY() + p3.getY() )/3.0);
-        
-        Point2D p = new Point2D.Double(newX, newY);   
+        double newX = (double) ((p1.getX() + p2.getX() + p3.getX()) / 3.0);
+        double newY = (double) ((p1.getY() + p2.getY() + p3.getY()) / 3.0);
+
+        Point2D p = new Point2D.Double(newX, newY);
         return p;
     }
 
@@ -72,7 +72,7 @@ public class Triangulo implements ObjetoGeometrico {
 
     @Override
     public String toString() {
-        return "Triangulo {" + "p1= " + p1.toString() + ", p2= " + p2.toString() + ", p3= " + p3.toString() + '}';
+        return "Triangulo {" + "p1 = " + p1.toString() + ", p2 = " + p2.toString() + ", p3 = " + p3.toString() + '}';
     }
 
 }
