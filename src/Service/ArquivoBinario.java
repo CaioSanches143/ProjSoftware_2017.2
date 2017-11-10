@@ -13,18 +13,20 @@ public class ArquivoBinario {
     public ArquivoBinario() {
     }
 
-    public void SalvarArquivoBinario(ArrayList log) throws FileNotFoundException, IOException {
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("arq.txt"))) {
+    public void SalvarArquivoBinario(ArrayList log,String nomeArq) throws FileNotFoundException, IOException {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nomeArq))) {
             out.writeObject(log);
             out.close();
         }
     }
 
-    public ArrayList LerArquivoBinario() throws FileNotFoundException, IOException, ClassNotFoundException {
+    public ArrayList LerArquivoBinario(String nomeArq) throws FileNotFoundException, IOException, ClassNotFoundException {
 
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("arq.txt"));
-        ArrayList list = (ArrayList) in.readObject();
-        in.close();
+        ArrayList list;
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomeArq))) {
+            list = (ArrayList) in.readObject();
+            in.close();
+        }
         return list;
     }
 
