@@ -1,8 +1,9 @@
 package Model;
 
 import java.awt.geom.Point2D;
+import java.io.Serializable;
 
-public class Circulo implements ObjetoGeometrico {
+public class Circulo implements ObjetoGeometrico, Serializable{
 
     private double raio;
     Point2D centro;

@@ -1,8 +1,12 @@
 package Model;
 
+import Service.ControllerArquivoBinarioObjetoGeometrico;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListObjetosGeometricos {
+public class ListObjetosGeometricos implements Serializable {
 
     private ArrayList<ObjetoGeometrico> listaOG;
 
@@ -24,12 +28,28 @@ public class ListObjetosGeometricos {
         return listaOG.size();
     }
 
+    public void salvarArqBinario() throws IOException {
+        ControllerArquivoBinarioObjetoGeometrico c = new ControllerArquivoBinarioObjetoGeometrico();
+        c.serviceControllerSalvarArqBinObjGeo(listaOG);
+
+    }
+
+    public void RestaurarArqBinario() throws IOException, FileNotFoundException, ClassNotFoundException {
+
+        ControllerArquivoBinarioObjetoGeometrico c = new ControllerArquivoBinarioObjetoGeometrico();
+        listaOG.addAll(c.serviceControllerRestaurarArqBinObjGeo());
+    }
+
+    public void clearAll() {
+        listaOG.clear();
+    }
+
     @Override
     public String toString() {
         String resp = "";
 
         for (ObjetoGeometrico obj : listaOG) {
-            resp = resp + obj.toString()+ "   ------> Área: "+obj.getArea()+" ; Perímetro: "+ obj.getPerimetro()+" ; Centro: "+ obj.getCentro().toString()+ "\n";
+            resp = resp + obj.toString() + "   ------> Área: " + obj.getArea() + " ; Perímetro: " + obj.getPerimetro() + " ; Centro: " + obj.getCentro().toString() + "\n";
         }
         return resp;
 

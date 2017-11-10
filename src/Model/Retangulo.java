@@ -1,8 +1,9 @@
 package Model;
 
 import java.awt.geom.Point2D;
+import java.io.Serializable;
 
-public class Retangulo implements ObjetoGeometrico {
+public class Retangulo implements ObjetoGeometrico, Serializable {
 
     private Point2D p1;
     private Point2D p2;
